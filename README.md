@@ -88,8 +88,7 @@
 
 
 - **[Tag를 이용한 Filtering](https://junit.org/junit5/docs/current/user-guide/#writing-tests-tagging-and-filtering)**
-
-  - `@Tag` 
+- `@Tag` 
      - IDE에서 configuration를 수정하여 태그 어노테이션으로 실행할 테스트 메서드 지정 가능
 
 ![](src\main\resources\static\img\tag.JPG)
@@ -115,3 +114,11 @@
       - `PER_METHOD` : 메서드 단위로 인스턴스 생성
    - `@BeforeAll`, `@AfterAll` 과 같이 `static` 키워드가 필요한 메서드들도 `static` 키워드가 필요없게 된다.
 
+
+
+- Junit Platform Properties
+   - 경로(`src\test\resources`)에 Junit 설정파일을 만들 수 있다.
+   - IDE에서 이를 JUnit Resource로 인식하도록 인텔리J에서 설정이 필요하다.
+      - [File] - [Project Structure] - [Modules] - [Test Resources]
+
+![junit-platform](src\main\resources\static\img\junit-platform.JPG)

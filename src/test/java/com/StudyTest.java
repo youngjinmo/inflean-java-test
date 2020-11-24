@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class StudyTest {
 
     @Test
@@ -74,12 +75,12 @@ class StudyTest {
     }
 
     @BeforeAll
-    static void beforeAll(){
+    void beforeAll(){
         System.out.println("통합 테스트 시작 전");
     }
 
     @AfterAll
-    static void afterAll(){
+    void afterAll(){
         System.out.println("통합 테스트 끝");
     }
 

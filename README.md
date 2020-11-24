@@ -1,29 +1,28 @@
 - **[Junit5](https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations)**
-
-  - `@Test`
+- `@Test`
    - 테스트 대상 메서드 어노테이션
-
-   - `@BeforeAll`
+  
+ - `@BeforeAll`
      - 전체 테스트가 실행되기 전 실행되는 메서드
     - `static` 키워드 또는 `@TestInstance`가 필요하다.
-
-   - `@AfterAll`
+  
+ - `@AfterAll`
      - 전체 테스트가 실행된 후 실행되는 메서드
     - `static` 키워드 또는 `@TestInstance`가 필요하다.
-
-   - `@BeforeEach`
+  
+ - `@BeforeEach`
      - 단위 테스트 전 실행 메서드
-
-   - `@AfterEach`
+  
+ - `@AfterEach`
      - 단위 테스트 후 실행 메서드
-
-   - `@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)`
+  
+ - `@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)`
      - underscore를 빈칸으로 변환해주는 어노테이션
      - 테스트 클래스 위에 한 번만 작성한다.
-
-   - `@DisplayName`
+  
+ - `@DisplayName`
    - 테스트 메서드의 이름을 콘솔에서 출력할때 사용하는 이름
-
+  
 - **[Junit Assertions](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)**
 
   - `import static org.junit.jupiter.api.Assertions.*`
@@ -40,16 +39,16 @@
 
      - 실제 값이 기대한 값과 같은지 확인
 
-![assertEquals](src\main\resources\static\img\assertEquals.JPG)
+![assertEquals](\src\main\resources\static\img\assertEquals.JPG)
 
-![lambda식으로 메세지 작성한 모습](src\main\resources\static\img\lambda-message.JPG)
+![lambda식으로 메세지 작성한 모습](\src\main\resources\static\img\lambda-message.JPG)
 
 - `assertTrue()`
    - 조건이 True인지 확인
 - `assertAll()` 
    - Assertions 테스트 코드는 **assertAll()** 안에 넣어서 한 번에 테스트 가능. 
 
-![AssertAll](src\main\resources\static\img\assertAll.JPG)
+![AssertAll](\src\main\resources\static\img\assertAll.JPG)
 
 - `assertThrows(expectedType, executable)`  	
    - 특정 시간안에 실행이 완료되는지 확인
@@ -60,7 +59,7 @@
   - 테스트가 타임아웃이 발생하면 바로 종료하는 테스트 메서드
   - `assertTimeoutPreemtively()` 는 ThreadLocal을 사용하므로 예상하지 못한 상황이 발생할 수 있음. 유의해서 사용 필요.
 
-![Timeout](src\main\resources\static\img\timeout.JPG)
+![Timeout](\src\main\resources\static\img\timeout.JPG)
 
 
 
@@ -91,7 +90,7 @@
 - `@Tag` 
      - IDE에서 configuration를 수정하여 태그 어노테이션으로 실행할 테스트 메서드 지정 가능
 
-![](src\main\resources\static\img\tag.JPG)
+![](\src\main\resources\static\img\tag.JPG)
 
 
 
@@ -102,7 +101,7 @@
    - `@Order()` 
      - 숫자를 넣어서 실행될 테스트 메서드 순서를 결정할 수 있다.
 
-![order](src\main\resources\static\img\order.JPG)
+![order](\src\main\resources\static\img\order.JPG)
 
 
 
@@ -121,4 +120,4 @@
    - IDE에서 이를 JUnit Resource로 인식하도록 인텔리J에서 설정이 필요하다.
       - [File] - [Project Structure] - [Modules] - [Test Resources]
 
-![junit-platform](src\main\resources\static\img\junit-platform.JPG)
+![junit-platform](\src\main\resources\static\img\junit-platform.JPG)

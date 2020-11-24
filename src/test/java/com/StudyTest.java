@@ -1,10 +1,23 @@
 package com;
 
 import org.junit.jupiter.api.*;
+
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
 class StudyTest {
+
+    @Test
+    @DisplayName("TimeOut 테스트")
+    void create_timeout_test(){
+        // 100 milli 동안 assert, 만약 이를 넘어가면 테스트 실패.
+        assertTimeout(Duration.ofMillis(100),() -> {
+            new Study(10);
+            Thread.sleep(120);
+        });
+    }
 
     @Test
     @DisplayName("테스트1")

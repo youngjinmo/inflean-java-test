@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class StudyTest {
 
     @Test
@@ -49,6 +50,7 @@ class StudyTest {
 
     @Test
     @DisplayName("테스트1")
+    @Order(1)
     void create(){
 
         // Study 클래스에서 입력한 IllegalArgumentException 을 테스트
@@ -66,6 +68,7 @@ class StudyTest {
 
     @Test
     @DisplayName("테스트2")
+    @Order(2)
     void create1(){
         System.out.println("create1");
     }

@@ -5,9 +5,7 @@ import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.junit.jupiter.api.Assumptions.assumingThat;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -19,26 +17,18 @@ class StudyTest {
         System.out.println("Fast Custom Tag Test");
     }
 
+    @DisplayName("Hello Repeated Test")
+    @RepeatedTest(value = 10, name = "{displayName}, {currentRepetition}/{totalRepetitions}")
+    void repeatTest(RepetitionInfo repetitionInfo){
+        System.out.println("test : "+repetitionInfo.getCurrentRepetition()+" of "
+                        +repetitionInfo.getTotalRepetitions());
+    }
+
     @Test
     @DisplayName("Tag 기능 테스트")
     @Tag("qa")
     void create_tag_test(){
         System.out.println("Tag Test");
-    }
-
-    @Test
-    @DisplayName("조건 테스트")
-    @DisabledOnOs(OS.WINDOWS)
-    void create_conditional_test(){
-        String test_env = System.getenv("TEST_ENV");
-        System.out.println(System.getenv("TEST_ENV"));
-
-        assumeTrue("LOCAL".equalsIgnoreCase(test_env));
-
-        assumingThat("LOCAL".equalsIgnoreCase(test_env), ()->{
-            System.out.println("local");
-            Study actual = new Study(15);
-        });
     }
 
     @Test
@@ -56,26 +46,15 @@ class StudyTest {
     }
 
     @Test
-    @DisplayName("테스트1")
-    @Order(1)
-    void create(){
-
-        // Study 클래스에서 입력한 IllegalArgumentException 을 테스트
-        assertThrows(IllegalArgumentException.class, ()-> new Study(-10));
-
-        Study study = new Study(-10);
-
-        assertAll(
-                ()-> assertNotNull(study),
-                ()-> assertEquals(StudyStatus.DRAFT,study.getStatus(),
-                        ()->"study 객체 처음 만들면, "+StudyStatus.DRAFT+" 상태여야한다."),
-                ()-> assertTrue(study.getLimit()>0,"limit은 0보다 커야한다.")
-        );
+    @DisplayName("테스트2")
+    @Order(2)
+    void create2(){
+        System.out.println("create2");
     }
 
     @Test
-    @DisplayName("테스트2")
-    @Order(2)
+    @DisplayName("테스트1")
+    @Order(1)
     void create1(){
         System.out.println("create1");
     }

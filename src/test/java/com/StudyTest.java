@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class StudyTest {
 
     @FastTest
@@ -23,6 +24,14 @@ class StudyTest {
         System.out.println("test : "+repetitionInfo.getCurrentRepetition()+" of "
                         +repetitionInfo.getTotalRepetitions());
     }
+
+    // 테스트 실패 -> 이유모름..
+//    @DisplayName("파라미터를 다르게 주는 반복 테스트")
+//    @ParameterizedTest(name = "{index}, {displayName}, weather={0}")
+//    @ValueSource(strings = {"봄","여름","가을","겨울"})
+//    void parameterizedTests(String weather){
+//        System.out.println("현 계절은 "+weather+" 입니다.");
+//    }
 
     @Test
     @DisplayName("Tag 기능 테스트")

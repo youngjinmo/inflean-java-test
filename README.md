@@ -1,6 +1,6 @@
 # JUnit5
 
-## [<a name="annotations"></a>Annotations](https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations)
+## <a name="annotations"></a>[Annotations](https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations)
 
 - `@Test`
    - 테스트 대상 메서드 어노테이션
@@ -29,7 +29,7 @@
 
 <br>
 
-## [<a name="assertions"></a>JUnit Assertions](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
+## <a name="assertions"></a>[JUnit Assertions](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
 
 - `import static org.junit.jupiter.api.Assertions.*`
  - Assert에서 에러 발생하면, 다음 Assertion으로 넘아가지 않음.
@@ -68,7 +68,7 @@
 
 <br>
 
-## [<a name="conditional-test"></a>조건에 따라 테스트 실행하기](https://junit.org/junit5/docs/current/user-guide/#writing-tests-conditional-execution)
+## <a name="conditional-test"></a>[조건에 따라 테스트 실행하기](https://junit.org/junit5/docs/current/user-guide/#writing-tests-conditional-execution)
 
 - 운영체제
    - `@DisabledOnOs(OS.WINDOWS) `
@@ -100,7 +100,7 @@
 
 <br>
 
-## [<a name="order"></a>Order 이용한 순서정의](https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-execution-order)
+## <a name="order"></a>[Order 이용한 순서정의](https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-execution-order)
 
 - `@TestMethodOrder(MethodOrderer.OrderAnnotation.class)`
      - 테스트 클래스 상단에 어노테이션 맵핑을 한다.
@@ -112,7 +112,7 @@
 
 <br>
 
-## [<a name="test-instance"></a>Test Instance](https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle)
+## <a name="test-instance"></a>[Test Instance](https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle)
 
 - 라이프 사이클의 단위(class/method)를 설정할 수 있다.
 - `@TestInstance(TestInstance.Lifecycle.PER_CLASS)`
@@ -123,7 +123,7 @@
 
 <br>
 
-## [<a name="junit-properties"></a>JUnit Properties]()
+## <a name="junit-properties"></a>[JUnit Properties]()
 
 - 경로(`src\test\resources`)에 Junit 설정파일을 만들 수 있다.
 - IDE에서 이를 JUnit Resource로 인식하도록 인텔리J에서 설정이 필요하다.
@@ -210,4 +210,8 @@ void repeatTest(RepetitionInfo repetitionInfo){
 ![](https://user-images.githubusercontent.com/33862991/100177612-befcf680-2f15-11eb-9cb4-39fdd540420e.JPG)
 
 <br>
+
+## <a name="parameterized-test"></a>Parameterized Test
+
+테스트를 반복할 때마다 파라미터를 바꿔주는 어노테이션이다.
 

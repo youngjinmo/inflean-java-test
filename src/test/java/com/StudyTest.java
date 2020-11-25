@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
@@ -11,6 +12,12 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // underscore -> blank
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class StudyTest {
+
+    @FastTest
+    @DisplayName("fast custom tag 테스트")
+    void custom_tag_test(){
+        System.out.println("Fast Custom Tag Test");
+    }
 
     @Test
     @DisplayName("Tag 기능 테스트")

@@ -215,3 +215,12 @@ void repeatTest(RepetitionInfo repetitionInfo){
 
 테스트를 반복할 때마다 파라미터를 바꿔주는 어노테이션이다.
 
+테스트에 파라미터를 넣어주는 방식이 두 가지가 존재한다. 단일 파라미터에 테스트 값을 주입하는 @ValueSource와 복수의 파라미터에 테스트 값을 주입하는 @CsvSource 이다.
+
+### ValueSource
+<img src="https://github.com/user-attachments/assets/83e2a94b-97da-45db-915d-a82a8110fc67" width=50%>
+
+### CsvSource
+<img src="https://github.com/user-attachments/assets/9c58973e-8737-456f-b923-8386b99de1e3" width=50%>
+
+
